@@ -221,6 +221,26 @@
             margin-bottom: 50px;
         }
 
+        .contact-actions {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap; /* Ensures they stack gracefully on very small phones */
+    }
+
+    /* Target the WhatsApp button specifically */
+    .btn-whatsapp {
+        background: transparent;
+        color: var(--primary);
+        border: 1px solid var(--primary);
+    }
+
+    .btn-whatsapp:hover {
+        background: #25D366; /* Official WhatsApp Green */
+        border-color: #25D366;
+        color: white;
+    }
+
         footer {
             padding: 60px 0;
             border-top: 1px solid #eee;
@@ -310,8 +330,10 @@
             <span class="section-label">Vamos conversar?</span>
             <h2>Pronto para expandir seus negócios.</h2>
             <p style="margin-bottom: 40px;">Entre em contato para orçamentos ou parcerias comerciais.</p>
-            <a href="mailto:contato@villarep.com.br" class="btn">Enviar E-mail</a>
-            <p style="margin-top: 20px; font-size: 0.9rem;">+55 (00) 0000-0000</p>
+            <div class="contact-actions">
+              <a href="mailto:villarep.mg@gmail.com" class="btn">Enviar E-mail</a>
+              <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+            <div class="contact-actions">
         </div>
     </section>
 
