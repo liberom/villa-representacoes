@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa Representações | Vendas Técnicas & Sustentabilidade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS VARIABLES - THEME SETUP */
+        :root {
+            --primary: #1a1a1a;    /* Deep Charcoal */
+            --accent: #c5a059;     /* Sophisticated Gold (Solar/Quality) */
+            --bg-light: #f9f9f9;   /* Off-white */
+            --text-muted: #666;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            padding: 30px 0;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0)), 
+                        url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&q=80&w=2076') center/cover;
+            /* Background image is a placeholder for a clean architectural/industrial look */
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 80%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* SERVICES / PORTFOLIO */
+        .section-label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .services {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            padding: 60px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            background: var(--white);
+            border-color: #eee;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .card-list {
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        .card-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-list li::before {
+            content: "—";
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 120px 0;
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex: 0 0 50%;
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; } /* Simplified for demo */
+            .about-content { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">Villa.</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#about">A Empresa</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <span class="section-label">Representações Comerciais</span>
+                <h1>Conectando excelência ao mercado.</h1>
+                <p>Atuamos como o elo estratégico entre indústrias de alta performance e o cliente final, focando em soluções têxteis industriais e energia renovável.</p>
+                <a href="#expertise" class="btn">Conheça nosso portfólio</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="expertise">
+        <div class="container">
+            <span class="section-label">O que fazemos</span>
+            <div class="grid">
+                <div class="card">
+                    <h3>Embalagens & Ráfia</h3>
+                    <p>Representamos os melhores fabricantes de polipropileno e tecidos técnicos para o setor agrícola e industrial.</p>
+                    <ul class="card-list">
+                        <li>Big Bags (FIBC)</li>
+                        <li>Sacos de Ráfia para Ração</li>
+                        <li>Tecidos Laminados e Convencionais</li>
+                        <li>Soluções de Logística de Grãos</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Energia Solar</h3>
+                    <p>Comprometidos com o futuro, facilitamos a aquisição de tecnologia fotovoltaica para projetos de larga escala.</p>
+                    <ul class="card-list">
+                        <li>Painéis Solares de Alta Eficiência</li>
+                        <li>Inversores e Estruturas</li>
+                        <li>Consultoria Técnica em Vendas</li>
+                        <li>Projetos Industriais e Rurais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-label" style="color: var(--accent);">Nossa Identidade</span>
+                    <h2>Villa Representações</h2>
+                    <p>Com um DNA comercial focado em resultados, a Villa não apenas vende produtos; nós entregamos confiança. Representamos marcas líderes como Brasrafia e Nonwoven, garantindo que a qualidade da fábrica chegue intacta ao cliente final através de um atendimento técnico e personalizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <span class="section-label">Vamos conversar?</span>
+            <h2>Pronto para expandir seus negócios.</h2>
+            <p style="margin-bottom: 40px;">Entre em contato para orçamentos ou parcerias comerciais.</p>
+            <a href="mailto:contato@villarep.com.br" class="btn">Enviar E-mail</a>
+            <p style="margin-top: 20px; font-size: 0.9rem;">+55 (00) 0000-0000</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Villa Representações. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
