@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Representações | Vendas Técnicas & Sustentabilidade</title>
+    <meta name="description" content="Representações comerciais em embalagens industriais e energia solar. Conectando indústrias de alta performance ao cliente final.">
+    <meta property="og:title" content="Villa Representações | Vendas Técnicas">
+    <meta property="og:description" content="Elo estratégico entre indústrias e o cliente final — embalagens, ráfia e energia solar.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=2076">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -74,6 +80,43 @@
 
         .nav-links li a:hover {
             color: var(--accent);
+        }
+
+        /* Mobile hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(255,255,255,0.98);
+                flex-direction: column;
+                padding: 30px 40px;
+                gap: 20px;
+                border-bottom: 1px solid #eee;
+            }
+            .nav-links.open { display: flex; }
         }
 
         /* HERO SECTION */
@@ -254,7 +297,7 @@
         @media (max-width: 768px) {
             .grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.8rem; }
-            .nav-links { display: none; } /* Simplified for demo */
+            .hero p { max-width: 100%; }
             .about-content { flex-direction: column; }
         }
     </style>
@@ -264,11 +307,14 @@
     <nav>
         <div class="container">
             <div class="logo">Villa.</div>
+            <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#about">A Empresa</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="#home" onclick="document.querySelector('.nav-links').classList.remove('open')">Home</a></li>
+                <li><a href="#expertise" onclick="document.querySelector('.nav-links').classList.remove('open')">Expertise</a></li>
+                <li><a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open')">A Empresa</a></li>
+                <li><a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('open')">Contato</a></li>
             </ul>
         </div>
     </nav>
@@ -333,14 +379,13 @@
             <div class="contact-actions">
               <a href="mailto:villarep.mg@gmail.com" class="btn">Enviar E-mail</a>
               <a href="https://wa.me/5500000000000?text=Olá!%20Eu%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-            <div class="contact-actions">
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Villa Representações. Todos os direitos reservados.</p>
-            <p>Foto de <a href="https://unsplash.com/pt-br/@cytonn_photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cytonn Photography</a> na <a href="https://unsplash.com/pt-br/fotografias/duas-pessoas-apertando-as-maos-n95VMLxqM2I?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+            <p>&copy; 2025 Villa Representações. Todos os direitos reservados.</p>
         </div>
     </footer>
 
